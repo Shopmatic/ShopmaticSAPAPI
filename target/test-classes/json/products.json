@@ -1,0 +1,29 @@
+{
+  "merchant_id": "bf7faffa-8400-42ad-9802-9d0c08812611",
+  "partner_product_id": "key board-1",
+  "category_id": "6010292a-c4fb-4009-a56a-a54c3109320b",
+  "name": "Practical Wallet",
+  "canonical_name": "practical-wallet-test-store-5",
+  "sku": "03",
+  "description": "Doloremque quae illo. Dolore sint nam. Vel blanditiis aut.",
+  "price": 100,
+  "stock_sum": 5,
+  "list_price": 120,
+  "allowed_overseas": true,
+  "upc_code": "03",
+  "mrp": 190,
+  "test": "1234",
+  "shipping_details": {
+    "city": "New Adena",
+    "street_name": "Bednar Roads",
+    "street_address": "744 Annmarie Neck",
+    "post_code": "50458-6514",
+    "country": "Lesotho"
+  },
+  "product_assets": [
+    {
+      "url": "https://via.placeholder.com/350x400.com",
+      "name": "test"
+    }
+  ]
+}

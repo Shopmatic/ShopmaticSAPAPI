@@ -1,0 +1,41 @@
+{
+  "partner_id": "574312ca-bf76-4ab3-bd4a-5dedcdb5dc28",
+  "partner_merchant_id": "cd524adf-556a-4dbd-9007-b21334b0b09d",
+  "rank": "1",
+  "name": "Merchant2",
+  "canonical_name": "merchant-test-store",
+  "country": "India",
+  "description": "Porro suscipit quia. Officia sed sequi. Voluptas cum soluta.",
+  "currency_id": "a719e747-8053-413a-aaf3-fd349012c5db",
+  "domain": "http://eo.fgospshopmatic.com",
+  "logo": "https://via.placeholder.com/150x100",
+  "cover_image": "https://via.placeholder.com/350x400",
+  "display_image": "https://via.placeholder.com/350x400",
+  "contact_info": {
+    "email": "georgeannapurdy@haag.co",
+    "phone": "414.125.6506"
+  },
+  "shipping_info": {
+    "city": "Raynorville",
+    "street_name": "Ollie Mountain",
+    "street_address": "2446 Hartmann Burgs",
+    "post_code": "90659",
+    "country": "Guadeloupe"
+  },
+  "notification_email": "georgeannapurdy@haag.co",
+  "social_plugins": {
+    "facebook": {
+      "provider": "facebook",
+      "uid": "2362171",
+      "info": {
+        "email": "leopoldo_legros@example.com",
+        "name": "Leopoldo Legros",
+        "first_name": "Leopoldo",
+        "last_name": "Legros",
+        "image": "https://placehold.it/300x300.png",
+        "verified": false
+      }
+    }
+  },
+  "story": "Porro suscipit quia. Officia sed sequi. Voluptas cum soluta."
+}
