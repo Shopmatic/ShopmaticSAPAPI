@@ -2,29 +2,33 @@ package categories;
 
 import static io.restassured.RestAssured.given;
 
+import java.io.IOException;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Utils.GetURL;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class FindCategoryNodesByName {
 	
-	String url = "https://api.myshopmaticbeta.com/find-category-by-name";
+	String path = "/find-category-by-name";
 	String name="materials";
 	
 	@Test
-	public void testFindCategoryNodeByName() {
+	public void testFindCategoryNodeByName() throws IOException {
 		Response response = given().
-				get(url+"/"+name);
+				get(GetURL.readToken()+path+"/"+name);
+		response.getBody().prettyPrint();
 		
-		JsonPath jsonPathEvaluator = response.jsonPath();
+		Assert.assertTrue(response.getStatusCode()==200);
 		if(response.getStatusCode() == 200) {
-			jsonPathEvaluator.get("name").toString().contains(name);
+			response.getBody().toString().contains(name);
 		}
 		else {
-			jsonPathEvaluator.get("message").toString().contains("record not found");
+			response.getBody().toString().contains("record not found");
 		}
-		System.out.println("------------------- JSON Response -------------------\n"+jsonPathEvaluator.get("")+"\n-------------------  -------------------\n");
 	}
 
 }

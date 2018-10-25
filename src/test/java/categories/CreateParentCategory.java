@@ -6,29 +6,23 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.restassured.path.json.JsonPath;
+import Utils.GetURL;
 import io.restassured.response.Response;
 
 public class CreateParentCategory {
 	
-	String url = "https://api.myshopmaticbeta.com/categories";
+	String path = "/categories";
 	String json_file_path="./src/test/resources/json/parentcategory.json";
 	
 	@Test
 	public void testCreateParentCategory() throws IOException {
-		Response response = given().header("content_language", "en-US").contentType("application/json").body(Files.readAllBytes(Paths.get(json_file_path))).when().post(url);
-		JsonPath jsonPathEvaluator = response.jsonPath();
-		if(response.getStatusCode() == 200) {
-			
-		}
-		else if(response.getStatusCode() == 422){
-			jsonPathEvaluator.get("name").toString().contains("can't be blank");
-		}
-		System.out.println("------------------- JSON Response -------------------\n"+jsonPathEvaluator.get("")+"\n-------------------  -------------------\n");
-			
+		Response response = given().header("content_language", "en-US").contentType("application/json").body(Files.readAllBytes(Paths.get(json_file_path))).when().post(GetURL.readToken()+path);
+		response.getBody().prettyPrint();
+		if(response.getStatusCode() == 422){
+			response.getBody().toString().contains("can't be blank");
+		}			
 	}
 	
 	

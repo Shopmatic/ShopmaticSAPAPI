@@ -2,22 +2,24 @@ package categories;
 
 import static io.restassured.RestAssured.given;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.testng.annotations.Test;
 
+import Utils.GetURL;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class GetListOfParentCategories {
 	
-	String url = "https://api.myshopmaticbeta.com/parent-categories";
+	String path = "/parent-categories";
 	
 	@Test
-	public void testGetListOfCategories() {
+	public void testGetListOfCategories() throws IOException {
 		Response response = given().
-				get(url);
-		
+				get(GetURL.readToken()+path);
+		response.getBody().prettyPrint();
 		JsonPath jsonPathEvaluator = response.jsonPath();
 
 		if(response.getStatusCode()==200) {
